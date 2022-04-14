@@ -1,7 +1,7 @@
 
 Feature: Login
 
-    Scenario: User logs in to the system succesfully
+    Scenario: Successful Login
          
         Given User is in the Login screen
         When They enter their taxisnet info
@@ -36,4 +36,24 @@ Feature: Login
         
         """
         And they stay in the Login Screen
+
+
+
+    Scenario: Home Page Logout
+
+        Given the user is logged in
+        And they are at the Home Page
+        When they press the Logout icon
+        Then they return to the Login Screen
+
+
+
+
+    Scenario: Menu Logout
+
+        Given the user is logged in
+        And they are at the Menu
+        When they press the LOGOUT Button
+        Then they return to the Login Screen
+
 
