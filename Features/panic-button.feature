@@ -12,7 +12,7 @@ Background:
 
 Scenario: Successful Notification
 
-    Given Mike has permitted the system to access his location and microphone. 
+    Given Mike has permitted the system to access his location, microphone amd camera. 
     When he presses the Panic Button
     Then a confirmation message appears
     """
@@ -44,7 +44,7 @@ Scenario: Successful Notification
 Scenario: Permissions not turned on
     
     Given Mike presses the Panic Button
-    But he has not permitted the system to access his location and microphone
+    But he has not permitted the system to access his location, microphone and camera
     Then a confirmation message appears
     """
     Are you sure you want to press the Panic Button?
@@ -56,7 +56,7 @@ Scenario: Permissions not turned on
     And he has the option to select "No"
 
     When he selects "Yes"
-    Then the system requests permission to access his location and microphone
+    Then the system requests permission to access his location, microphone and camera
     And he has the option to grant permission
     And he has the option to deny permission
 
@@ -78,7 +78,7 @@ Scenario: Permissions not turned on
 
 Scenario: Non-Intentional Press
 
-    Given Mike has permitted the system to access his location and microphone. 
+    Given Mike has permitted the system to access his location, microphone and camera 
     When he presses the Panic Button
     Then a confirmation message appears
     """
@@ -103,7 +103,7 @@ Scenario: Non-Intentional Press
 Scenario: Deny Permission
     
     Given Mike presses the Panic Button
-    But he has not permitted the system to access his location and microphone
+    But he has not permitted the system to access his location, microphone and camera
     Then a confirmation message appears
     """
     Are you sure you want to press the Panic Button?
@@ -115,7 +115,7 @@ Scenario: Deny Permission
     And he has the option to select "No"
 
     When he selects " Yes "
-    Then the system requests permission to access his location and microphone
+    Then the system requests permission to access his location, microphone and camera
     And he has the option to grant permission
     And he has the option to deny permission
 
